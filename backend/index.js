@@ -13,6 +13,21 @@ app.get('/' , (request, response) => {
     return response.status(234).send('Welcome TO MERN Stack')
 });
 
+//Route for Get all books from database by id
+app.get('/books/:id', async (request, response) => {
+    try {
+
+        const { id } = request.params;
+        const book = await Book.findById(id);
+
+        return response.status(200).json({book});
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
+
 //Route for Get all books from database
 app.get('/books', async (request, response) => {
     try {
