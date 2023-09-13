@@ -2,11 +2,8 @@ import express from "express";
 import { Book } from "../models/bookModel.js";
 
 const router = express.Router();
+wpdvip3
 
-router.get("/", (request, response) => {
-  console.log(request);
-  return response.status(234).send("Welcome TO MERN Stack");
-});
 
 //Route for Get all books from database by id
 router.get("/:id", async (request, response) => {
@@ -34,7 +31,7 @@ router.get("/", async (request, response) => {
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }
-});https://vscode.dev/github/parthzile/book-store/blob/main/backend/routes/booksRoute.js#L22
+});
 
 //Route for Save a new Book
 router.post("/", async (request, response) => {
